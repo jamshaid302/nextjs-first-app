@@ -1,10 +1,10 @@
 "use client";
-import axios from "axios";
-import Page from "../page";
 import Image from "next/image";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Page from "../page";
 
 // export const metadata = {
 //   title: "Dashboard Page",
@@ -16,9 +16,13 @@ export default function DashboardPage() {
   const [images, setImages] = useState([]);
 
   const getImages = async () => {
-    const res = await axios.get("http://localhost:4000/api/get-images");
-    if (res?.data?.images?.length) {
-      setImages(res?.data?.images);
+    try {
+      const res = await axios.get("http://localhost:4000/api/get-images");
+      if (res?.data?.images?.length) {
+        setImages(res?.data?.images);
+      }
+    } catch (error) {
+      console.log("error", error);
     }
   };
 

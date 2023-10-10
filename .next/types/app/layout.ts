@@ -1,4 +1,4 @@
-// File: D:\personal\Projects\aws-with-next\next-app\src\app\layout.js
+// File: /Users/hashlogics/Sites/jamshaid/clone-next-app/nextjs-first-app/src/app/layout.js
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

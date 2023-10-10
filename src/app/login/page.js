@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import Page from "../page";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -28,7 +27,7 @@ export default function LoginPaage() {
   };
 
   return (
-    <Page>
+    <div>
       <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl">
           <h1 className="text-3xl font-bold text-center text-gray-700">
@@ -134,6 +133,6 @@ export default function LoginPaage() {
           </p>
         </div>
       </div>
-    </Page>
+    </div>
   );
 }

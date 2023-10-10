@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import Page from "../page";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -27,7 +26,7 @@ export default function SignupPaage() {
   };
 
   return (
-    <Page>
+    <div>
       <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl">
           <h1 className="text-3xl font-bold text-center text-gray-700">
@@ -74,6 +73,6 @@ export default function SignupPaage() {
           </form>
         </div>
       </div>
-    </Page>
+    </div>
   );
 }

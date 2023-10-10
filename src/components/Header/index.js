@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <div className="flex items-center flex-shrink-0 text-yellow-900 mr-6">
           <svg
             className="fill-current h-8 w-8 mr-2"
             width="54"
@@ -52,19 +52,25 @@ export default function Header() {
           <div className="text-sm lg:flex-grow">
             <a
               href="/dashboard"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+              className={`block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 ${
+                currentRoute === "/dashboard" ? "visited:text-white" : ""
+              }`}
             >
               Dashboard
             </a>
             <a
               href="/about"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+              className={`block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 ${
+                currentRoute === "/about" ? "visited:text-white" : ""
+              }`}
             >
               About
             </a>
             <a
               href="/todo-list"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+              className={`block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white ${
+                currentRoute === "/todo-list" ? "visited:text-white" : ""
+              }`}
             >
               Todo List
             </a>
