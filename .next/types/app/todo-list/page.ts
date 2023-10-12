@@ -1,4 +1,4 @@
-// File: /Users/hashlogics/Sites/jamshaid/clone-next-app/nextjs-first-app/src/app/todo-list/page.js
+// File: /Users/hashlogics/Sites/jamshaid/nextjs-first-app/src/app/todo-list/page.js
 import * as entry from '../../../../src/app/todo-list/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
