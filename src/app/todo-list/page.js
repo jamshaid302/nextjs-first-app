@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import TodoList from "@/components/TodoList";
+import TodoList from "@/components/TodoTable";
 import { useRouter } from "next/navigation";
 
 // export const metadata = {
@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 //   description: "This is the todo list page",
 // };
 
-export default function AboutPaage() {
+export default function TodoPage() {
   const router = useRouter();
 
   const [todo, setTodo] = useState("");
