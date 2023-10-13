@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import prisma from "../../../../prisma";
+import { NextRequest, NextResponse } from "next/server";
 
 async function main() {
   try {
@@ -9,20 +9,33 @@ async function main() {
   }
 }
 
-export const GET = async (req, res) => {
+export const GET = async (req) => {
   try {
     await main();
     const list = await prisma.todolist.findMany();
-    return res.status(200).json({ message: "successfull", list });
+    return NextResponse.json({ message: "successful", list }, { status: 200 });
   } catch (error) {
-    return res.status(500).json({ ...error, message: error.message });
+    return NextResponse.json(
+      { ...error, message: error.message },
+      { status: 500 }
+    );
+  } finally {
+    await prisma.$disconnect();
   }
 };
 
-export const POST = async (req, res) => {
+export const POST = async (req) => {
   try {
-    console.log("post");
+    const { todo } = await req.json();
+    await main();
+    const item = await prisma.todolist.create({ data: { todo } });
+    return NextResponse.json({ message: "successfull", item }, { status: 201 });
   } catch (error) {
-    return res.status(500).json({ ...error, message: error.message });
+    return NextResponse.json(
+      { ...error, message: error.message },
+      { status: 500 }
+    );
+  } finally {
+    await prisma.$disconnect();
   }
 };

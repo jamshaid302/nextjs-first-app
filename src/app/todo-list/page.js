@@ -8,7 +8,19 @@ import { useRouter } from "next/navigation";
 //   description: "This is the todo list page",
 // };
 
-export default function TodoPage() {
+// const getTodos = async () => {
+//   const res = await fetch("http://localhost:3000/api/todo", {
+//     next: {
+//       revalidate: 10,
+//     },
+//   });
+//   const { list } = await res.json();
+//   return list;
+// };
+
+export default async function TodoPage() {
+  // const todolist = await getTodos();
+
   const router = useRouter();
 
   const [todo, setTodo] = useState("");
