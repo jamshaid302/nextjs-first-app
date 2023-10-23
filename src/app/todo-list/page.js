@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 //   return list;
 // };
 
-export default async function TodoPage() {
+export default function TodoPage() {
   // const todolist = await getTodos();
 
   const router = useRouter();
